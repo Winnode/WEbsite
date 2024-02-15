@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Win-Node</title>
+    <!-- Include FontAwesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            color: #333;
+            text-align: center;
+        }
+        .navbar {
+            overflow: hidden;
+            background-color: #1abc9c;
+            border-bottom: 2px solid #f9f9f9;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 20px 0;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 25px;
+            transition: color 1.3s ease;
+        }
+        .navbar a:hover {
+            color: #1abc9c ;
+        }
+        .container {
+            max-width: 1200px; /* Increased max-width for wider layout */
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #1abc9c ;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Dynamic column width */
+            gap: 40px; /* Increased gap between columns */
+        }
+        .column {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+		.mainnet h1, .testnet h1 {
+			font-size: 72px; /* Increased font size for titles */
+			margin-bottom: 20px; /* Added margin below titles */
+			color: #00ffff ; /* Name color */
+			text-align: center; /* Center align titles */
+		}
+
+		.mainnet, .testnet {
+			display: none; /* Hide Testnet by default */
+		}
+        .ascii-art {
+            margin-bottom: 20px;
+            text-align: center; /* Center ASCII text */
+        }
+        .social-icons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 100px; /* Added gap between icons */
+        }
+        .social-icons a {
+            color: #1abc9c ; /* Changed icon color to primary color */
+            text-decoration: none;
+            font-size: 48px; /* Increased icon size */
+            transition: color 0.3s ease; /* Added transition effect */
+        }
+        .social-icons a:hover {
+            color: #00ffff; /* Changed icon color on hover */
+        }
+        button {
+            background-color: #000000 ;
+            color: #fff;
+            border: none;
+            padding: 20px 30px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* Added transition effect */
+        }
+        button:hover {
+            background-color: #00ff00 ; /* Changed button color on hover */
+        }
+        .box {
+            border: 10px solid #000000 ; /* Added border style */
+            border-radius: 5px;
+            display: inline-block;
+            padding: 5px 10px;
+            margin-top: 2px; /* Added margin top */
+        }
+        .marquee-container {
+            width: 100%;
+            overflow: hidden;
+        }
+        .marquee-text {
+            white-space: nowrap; /* Prevent text from wrapping to the next line */
+            animation: marquee 20s linear infinite; /* Apply animation with duration of 20 seconds */
+            font-size: 34px; /* Increased font size */
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Style for centering image */
+        .image-container {
+            display: flex;
+            align-items: center;
+            flex-direction: column; /* Align content vertically */
+            margin-bottom: 20px;
+        }
+
+        .image-container img {
+            width: 15%; /* Adjust image width */
+            height: auto;
+            margin-bottom: 10px; /* Add space below image */
+        }
+
+        .button-container {
+            display: flex;
+            gap: 10px; /* Add space between buttons */
+        }
+    </style>
+</head>
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="node.html">Node</a>
+        <a href="service.html">Services</a>
+        <a href="tools.html">Tools</a>
+        <a href="about.html">About Us</a>
+    </div>
+<!-- Centered image -->
+<div class="image-container">
+    <img src="https://bafkreiakkze7napzkwzsnfsshc3yd2vc2kspvy6wdwnv4hcmnwaimlpsca.ipfs.nftstorage.link/" alt="Gambar" style="width: 30%; height: auto;">
+</div>
+<body>
+<!-- Tab buttons -->
+<div>
+    <button class="tab active" onclick="openChain(event, 'mainnet')">Mainnet</button>
+    <button class="tab" onclick="openChain(event, 'testnet')">Testnet</button>
+</div>
+
+<div class="container">
+    <!-- Mainnet -->
+    <div class="column mainnet" id="mainnet">
+        <h1>--MAINNET--</h1>
+        <div class="chain-info">
+            <div class="image-container">
+                <img src="https://bafkreigz6eiudh26rgi25wshs4rvybbqpanrknytrxiylxyddkly7e2z6a.ipfs.nftstorage.link/" alt="Powerloom Image">
+                <h1 style="color: #fff;">Powerloom</h1>
+                <div class="button-container">
+                    <a href="https://github.com/catsmile100/Validor-Mainnet/tree/main/Powerloom"><button class="box">Document</button></a>
+                    <a href="https://snapshotter-dashboard.powerloom.network"><button class="box">Stake</button></a>
+                </div>
+            </div>
+        </div>
+            <div class="chain-info">
+                <div class="image-container">
+                    <img src="https://bafkreiemish4bgluhcwtd5ch6ghp2cyaetqc3tm6vh7kg3uzpeoh6xqx2y.ipfs.nftstorage.link/" alt="BlockX Image">
+                    <h1 style="color: #fff;">BlockX</h1>
+                    <div class="button-container">
+                        <a href="https://github.com/catsmile100/Validor-Mainnet/blob/main/BlockX"><button class="box">Document</button></a>
+                        <a href="https://ping.blockxnet.com/blockx/staking/blockxvaloper1fk7wy5jxnqrlsjwh68k9qm3mdtg96w33879dry"><button class="box">Stake</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="chain-info">
+                <div class="image-container">
+                    <img src="https://bafkreib74na725sgikgaazxtrzm2bqmromsshhsx4etbbwj3rbovyqieay.ipfs.nftstorage.link/" alt="Pactuschain Image">
+                    <h1 style="color: #fff;">Pactuschain</h1>
+                    <div class="button-container">
+                        <a href="https://github.com/catsmile100/Validator-Mainnet/tree/main/Pactuss"><button class="box">Document</button></a>
+                        <a href="https://pacscan.org/address/pc1pfyth9kd4rtjpl0k80773fsq9z7wd9z92v5cew3"><button class="box">Stake</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="chain-info">
+                <div class="image-container">
+                    <img src="https://bafkreiaw6k45vxqxqet4bbnyejacyrmuzukzixj7qmqmj46dhrhhfw634a.ipfs.nftstorage.link/" alt="Massa Image">
+                    <h1 style="color: #fff;">Massa</h1>
+                    <div class="button-container">
+                        <a href="https://github.com/catsmile100/Validor-Mainnet/tree/main/MassaLab"><button class="box">Document</button></a>
+                        <a href="soon"><button class="box">Stake</button></a>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <!-- Testnet -->
+    <div class="column testnet" id="testnet">
+        <h1>--TESTNET--</h1>
+        <div class="chain-info">
+            <div class="image-container">
+                <img src="https://bafkreiaylqf5oiytlh4k5z2ext5dykn3kf3tgmugqfaqtn3dvrs56suil4.ipfs.nftstorage.link/" alt="Namada Image">
+                <h1 style="color: #fff;">Namada</h1>
+                <div class="button-container">
+                    <a href="https://namada.catsmile.tech/"><button class="box">Document</button></a>
+                    <a href="Soon Update"><button class="box">Stake</button></a>
+                </div>
+            </div>
+        </div>
+            <div class="chain-info">
+                <div class="image-container">
+                    <img src="https://bafkreia5ogz3wn6jen6vfdzs7oq2hz6afsa6unitfog3pyg5zaxjyytgqi.ipfs.nftstorage.link/" alt="Nulink Image">
+                    <h1 style="color: #fff;">Nulink</h1>
+                    <div class="button-container">
+                        <a href="https://github.com/catsmile100/Validator-Testnet/tree/main/Nulink"><button class="box">Document</button></a>
+                        <a href="https://dashboard.testnet.nulink.org/"><button class="box">Stake</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="chain-info">
+                <div class="image-container">
+                    <img src="https://bafkreiagcfazp7wgpm2q4osrlgwqvis67mbyjc77otx7x3g4hya4jfx5ty.ipfs.nftstorage.link/" alt="Mantrachain Image">
+                    <h1 style="color: #fff;">Mantrachain</h1>
+                    <div class="button-container">
+                        <a href="https://github.com/catsmile100/Validator-Testnet/tree/main/Mantra%20Chain"><button class="box">Document</button></a>
+                        <a href="https://testnet.itrocket.net/mantra/staking/mantravaloper1wvh4zdftncywjnskvmnug8369rdjxmtaa2qymn"><button class="box">Stake</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="chain-info">
+                <div class="image-container">
+                    <img src="https://bafkreibicbycmujiwirbppk7ajd3zuy7uiuprkylfp4hn6tfcfnwz7h5dm.ipfs.nftstorage.link/" alt="Entrypoint Image">
+                    <h1 style="color: #fff;">Entrypoint</h1>
+                    <div class="button-container">
+                        <a href="https://github.com/catsmile100/Validator-Testnet/blob/main/Entrypoint"><button class="box">Document</button></a>
+                        <a href="https://explorer.nodex.one/entrypoint/staking/entrypointvaloper1lr0xtcj7zcq44qzrzneg3wa5wcs68w5xf3rmrz"><button class="box">Stake</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="chain-info">
+                <div class="image-container">
+                    <img src="https://bafkreid7e6earz3mjfvkzjgljuy2v6konxkyya3vgqwvhhlmm47twpwti4.ipfs.nftstorage.link/" alt="Entangle Image">
+                    <h1 style="color: #fff;">Entangle</h1>
+                    <div class="button-container">
+                        <a href="https://github.com/catsmile100/Validator-Testnet/tree/main/Entangle"><button class="box">Document</button></a>
+                        <a href="https://testnet.itrocket.net/entangle/staking/ethmvaloper1pfpwlch4lk3d6k9wxfwjlsdrpcdf45xxxglum8"><button class="box">Stake</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="chain-info">
+                <div class="image-container">
+                    <img src="https://bafkreiby25r6kyh7p6o6c6xorvbxphtyieu4mr7malpateyobaqhrjbfjy.ipfs.nftstorage.link/" alt="Prymz Image">
+                    <h1 style="color: #fff;">Prymz</h1>
+                    <div class="button-container">
+                        <a href="https://github.com/catsmile100/Validator-Testnet/tree/main/PRYMZM"><button class="box">Document</button></a>
+                        <a href="https://testnet.itrocket.net/pryzm/staking/pryzmvaloper1x3z27wjdr02vg72mrmmlf239gzyhkmsplx9p3k"><button class="box">Stake</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="chain-info">
+                <div class="image-container">
+		    <img src="https://bafkreigpeqh4hncgrrqbgvdea2phmuevx4sjsthghgtxlwyevifowd5hf4.ipfs.nftstorage.link/" alt="Lumoz Image">
+		    <h1 style="color: #fff;">Lumoz</h1>
+		    <div class="button-container">
+                       <a href="https://github.com/catsmile100/Validator-Testnet/tree/main/Lumoz"><button class="box">Document</button></a>
+                       <a href="https://lumoz.org/leaderboard"><button class="box">Stake</button></a>
+                   </div>
+	       </div>
+	  </div>
+    </div>
+</div>
+
+<div class="social-icons">
+    <a href="https://twitter.com/Winnode"><i class="fab fa-twitter"></i></a>
+    <a href="https://discord.com/users/1032873095603699802"><i class="fab fa-discord"></i></a>
+    <a href="https://t.me/winnodex"><i class="fab fa-telegram"></i></a>
+    <a href="https://github.com/Winnode"><i class="fab fa-github"></i></a>
+    <a href="mailto:maladarsih@gmail.com"><i class="far fa-envelope"></i></a>
+</div>
+<script>
+    // Show Mainnet tab by default
+    document.getElementById("mainnet").style.display = "block";
+    function openChain(event, chainName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("column");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tab");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(chainName).style.display = "block";
+        event.currentTarget.className += " active";
+    }
+</script>
+
+</body>
+</html>
